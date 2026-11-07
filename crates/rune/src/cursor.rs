@@ -23,6 +23,12 @@ pub enum Cursor {
     Move,
     ResizeColumn,
     ResizeRow,
+    /// A diagonal resize cursor along the north-west / south-east axis (CSS `nwse-resize`),
+    /// for top-left and bottom-right corner resize handles.
+    ResizeNwse,
+    /// A diagonal resize cursor along the north-east / south-west axis (CSS `nesw-resize`),
+    /// for top-right and bottom-left corner resize handles.
+    ResizeNesw,
     /// A precise-selection cross (CSS `crosshair`), for picking a point or dragging out a rect.
     Crosshair,
     /// No OS cursor (CSS `none`), for views that draw their own. It shows again as soon as the

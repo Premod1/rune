@@ -176,6 +176,8 @@ fn icon(c: Cursor) -> CursorIcon {
         Cursor::Move => CursorIcon::Move,
         Cursor::ResizeColumn => CursorIcon::ColResize,
         Cursor::ResizeRow => CursorIcon::RowResize,
+        Cursor::ResizeNwse => CursorIcon::NwseResize,
+        Cursor::ResizeNesw => CursorIcon::NeswResize,
         Cursor::Crosshair => CursorIcon::Crosshair,
     }
 }
@@ -183,6 +185,12 @@ fn icon(c: Cursor) -> CursorIcon {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn diagonal_resize_cursors_map_to_winit_icons() {
+        assert_eq!(icon(Cursor::ResizeNwse), CursorIcon::NwseResize);
+        assert_eq!(icon(Cursor::ResizeNesw), CursorIcon::NeswResize);
+    }
 
     #[test]
     fn a_host_sets_its_cursor_while_active_and_the_arrow_once_when_it_stops() {

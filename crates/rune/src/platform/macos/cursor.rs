@@ -132,6 +132,8 @@ pub(crate) fn set_ns_cursor(cursor: Cursor) {
             (None, C::NotAllowed) => msg_send_id![class, operationNotAllowedCursor],
             (None, C::ResizeColumn) => msg_send_id![class, resizeLeftRightCursor],
             (None, C::ResizeRow) => msg_send_id![class, resizeUpDownCursor],
+            (None, C::ResizeNwse) => msg_send_id![class, _windowResizeNorthWestSouthEastCursor],
+            (None, C::ResizeNesw) => msg_send_id![class, _windowResizeNorthEastSouthWestCursor],
             (None, C::Crosshair) => msg_send_id![class, crosshairCursor],
             (None, _) => msg_send_id![class, arrowCursor],
         };

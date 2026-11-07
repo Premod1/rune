@@ -1,0 +1,1 @@
+- **Diagonal resize cursors.** `Cursor::ResizeNwse` and `Cursor::ResizeNesw` show diagonal resize shapes (CSS `nwse-resize` and `nesw-resize`) for corner handles, across winit, Wayland layer-shell overlays, and macOS AppKit.
